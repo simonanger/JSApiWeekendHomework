@@ -1,4 +1,19 @@
 #main-map {
   height: 500px;
   width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+body {
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  font-family: sans-serif;
+}
+
+select {
+  font-size: 0.5em;
 }

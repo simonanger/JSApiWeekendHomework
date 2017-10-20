@@ -44,6 +44,4 @@ var updateCountryDetails = function(country) {
   mainMap.googleMap.setCenter(chosenLatLng)
   mainMap.addMarker(chosenLatLng);
 }
-
-
 window.addEventListener("load", makeRequest)
