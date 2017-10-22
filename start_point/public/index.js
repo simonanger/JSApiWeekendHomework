@@ -1,5 +1,6 @@
 
 var url = "https://restcountries.eu/rest/v2/all";
+var url2 = "http://ron-swanson-quotes.herokuapp.com/v2/quotes"
 
 var makeRequest = function() {
   var mapDiv = document.getElementById('main-map');
@@ -13,6 +14,17 @@ var makeRequest = function() {
     console.log(countries);
   })
   request.send()
+}
+
+var makeRonRequest = function() {
+  var h2 = document.getElementById("quote")
+  var request = new XMLHttpRequest();
+  request.open("GET", url2);
+  request.addEventListener("load", function() {
+    quote = JSON.parse(this.responseText);
+    h2.innerText = "'"+ quote[0] + "'"  + " -Ron Swanson";
+  })
+  request.send();
 }
 
 var render = function(countries) {
@@ -45,3 +57,4 @@ var updateCountryDetails = function(country) {
   mainMap.addMarker(chosenLatLng);
 }
 window.addEventListener("load", makeRequest)
+window.addEventListener("load", makeRonRequest)
